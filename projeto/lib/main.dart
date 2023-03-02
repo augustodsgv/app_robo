@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'oriente_me.dart';
+import 'orienteMe.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MaterialApp(home: MyApp()));
 }
 
 class MyApp extends StatefulWidget {
@@ -17,12 +17,7 @@ class _MyHomePageState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          body:
-              /*Center(
-          child: Text(
-            'Bem vindo(a) ao DC!')
-        )*/
-              Column(
+          body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Row(
@@ -37,8 +32,10 @@ class _MyHomePageState extends State<MyApp> {
               ElevatedButton(
                   onPressed: () {
                     print("oriente-me");
-                    Future<bool> mensagem = recebeMensagem();
-                    print(mensagem);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => OrienteMe()),
+                    );
                   },
                   child: const Text(
                     'Oriente-me',
