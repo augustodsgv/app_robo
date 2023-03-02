@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
+import 'nao_estou_bem.dart';
 import 'orienteMe.dart';
 
 void main() {
   runApp(MaterialApp(home: MyApp()));
-}
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
+  
+  @override
+  Widget build(BuildContext context) {
+    return _MyHomePageState();
+  }
 }
 
-class _MyHomePageState extends State<MyApp> {
+class _MyHomePageState extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -73,6 +78,9 @@ class _MyHomePageState extends State<MyApp> {
               ElevatedButton(
                 onPressed: () {
                   print("não me sinto bem");
+                  Navigator.push(context, 
+                  MaterialPageRoute(builder: (context) => Page1()),
+                  );
                 },
                 child: Text(
                   "Não me sinto bem",
