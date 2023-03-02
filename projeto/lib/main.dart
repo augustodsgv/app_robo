@@ -4,20 +4,21 @@ import 'orienteMe.dart';
 
 void main() {
   runApp(MaterialApp(home: MyApp()));
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
-  
+
   @override
   Widget build(BuildContext context) {
     return _MyHomePageState();
   }
 }
 
-class _MyHomePageState extends StatelessWidget{
+class _MyHomePageState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -78,8 +79,9 @@ class _MyHomePageState extends StatelessWidget{
               ElevatedButton(
                 onPressed: () {
                   print("não me sinto bem");
-                  Navigator.push(context, 
-                  MaterialPageRoute(builder: (context) => Page1()),
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Page1()),
                   );
                 },
                 child: Text(
