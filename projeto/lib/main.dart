@@ -1,33 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:web_socket_channel/io.dart';
+import 'oriente_me.dart';
 
 void main() {
   runApp(const MyApp());
-}
-
-// Função que envia mensagem para o back-end
-void sendMessage(msg) {
-  IOWebSocketChannel? channel;
-
-  // Testando a conexão
-  try {
-    channel = IOWebSocketChannel.connect('ws://localhost:3000');
-  } catch (erro) {
-    print("Erro ao conectar: " + erro.toString());
-  }
-
-  // Enviando a mensagem
-  channel?.sink.add(msg);
-
-  // Recebendo mensagens de volta
-  channel?.stream.listen((resposta) {
-    print(resposta);
-  });
-}
-
-// Função que recebe o destino do botão e passa pro back-end
-void enviaLocal(local){
-  
 }
 
 class MyApp extends StatefulWidget {
@@ -62,6 +37,8 @@ class _MyHomePageState extends State<MyApp> {
               ElevatedButton(
                   onPressed: () {
                     print("oriente-me");
+                    Future<bool> mensagem = recebeMensagem();
+                    print(mensagem);
                   },
                   child: const Text(
                     'Oriente-me',
