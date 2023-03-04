@@ -1,22 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+import 'templates/BotaoTemplate.dart';
 
-// Função que recebe o destino do botão e passa pro back-end
-Future<bool> enviaLocal(local) async {
-  var resposta = await http.get(
-      (Uri.parse('http://192.168.137.14:500/ros/goTo/' + local.toString())));
-  if (resposta.statusCode == 200) {
-    return true;
-  } else {
-    return false;
-  }
-}
+
 
 class OrienteMe extends StatefulWidget {
   const OrienteMe({Key? key}) : super(key: key);
 
   @override
   _OrienteMeState createState() => _OrienteMeState();
+}
+
+bool printa(texto) {
+  print(texto);
+  return true;
 }
 
 class _OrienteMeState extends State {
@@ -96,18 +92,12 @@ class _OrienteMeState extends State {
             ),
           )
         ]),
+        /*
+        // Secretaria
         Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-          ElevatedButton(
-            onPressed: () {
-              print("Secretaria");
-              //eviaLoca("secretaria")
-            },
-            child: const Text(
-              'secretaria',
-              style: TextStyle(fontSize: 15),
-            ),
-          )
+          BotaoTemplate("secretaria", enviaLocal("secretaria")),
         ]),
+        */
       ]),
     ));
   }
