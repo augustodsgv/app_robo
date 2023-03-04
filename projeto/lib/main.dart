@@ -14,6 +14,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyApp> {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -74,8 +75,10 @@ class _MyHomePageState extends State<MyApp> {
               ElevatedButton(
                 onPressed: () {
                   print("não me sinto bem");
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Page1()));
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Page1()),
+                  );
                 },
                 child: Text(
                   "Não me sinto bem",
