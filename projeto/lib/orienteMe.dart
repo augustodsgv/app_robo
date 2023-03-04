@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'templates/BotaoTemplate.dart';
 
-
-
 class OrienteMe extends StatefulWidget {
   const OrienteMe({Key? key}) : super(key: key);
 
