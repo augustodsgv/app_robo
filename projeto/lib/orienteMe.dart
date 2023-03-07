@@ -24,11 +24,11 @@ class _OrienteMeState extends State {
         Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
           ElevatedButton(
             onPressed: () {
-              print('Banheiros');
-              enviaLocal('Banheiros');
+              print('Home');
+              enviaLocal('Home');
             },
             child: const Text(
-              'Banheiros',
+              'Home',
             ),
           )
         ]),
@@ -46,11 +46,11 @@ class _OrienteMeState extends State {
         Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
           ElevatedButton(
             onPressed: () {
-              print("Banheiro");
-              enviaLocal("banheiro");
+              print("Banheiros");
+              enviaLocal("Banheiros");
             },
             child: const Text(
-              'Banheiro',
+              'Banheiros',
               style: TextStyle(fontSize: 15),
             ),
           )
@@ -71,10 +71,10 @@ class _OrienteMeState extends State {
           ElevatedButton(
             onPressed: () {
               print("LIG");
-              enviaLocal("LIG");
+              enviaLocal("Lig");
             },
             child: const Text(
-              'LIG',
+              'Lig',
               style: TextStyle(fontSize: 15),
             ),
           )
@@ -82,11 +82,11 @@ class _OrienteMeState extends State {
         Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
           ElevatedButton(
             onPressed: () {
-              print("LE");
-              enviaLocal("LE");
+              print("LE-1");
+              enviaLocal("LE-1");
             },
             child: const Text(
-              'LE',
+              'LE-1',
               style: TextStyle(fontSize: 15),
             ),
           )
