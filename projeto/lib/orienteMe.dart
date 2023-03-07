@@ -1,22 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-
-// Função que recebe o destino do botão e passa pro back-end
-Future<bool> enviaLocal(local) async {
-  var resposta = await http.get(
-      (Uri.parse('http://192.168.137.14:500/ros/goTo/' + local.toString())));
-  if (resposta.statusCode == 200) {
-    return true;
-  } else {
-    return false;
-  }
-}
+import 'templates/BotaoTemplate.dart';
+import 'connect_back_end.dart';
 
 class OrienteMe extends StatefulWidget {
   const OrienteMe({Key? key}) : super(key: key);
 
   @override
   _OrienteMeState createState() => _OrienteMeState();
+}
+
+bool printa(texto) {
+  print(texto);
+  return true;
 }
 
 class _OrienteMeState extends State {
@@ -29,11 +24,11 @@ class _OrienteMeState extends State {
         Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
           ElevatedButton(
             onPressed: () {
-              print("Auditorio");
-              // enviaLocal("auditorio");
+              print('Banheiros');
+              enviaLocal('Banheiros');
             },
             child: const Text(
-              'Auditório',
+              'Banheiros',
             ),
           )
         ]),
@@ -41,7 +36,7 @@ class _OrienteMeState extends State {
           ElevatedButton(
             onPressed: () {
               print("Cafezinho");
-              // enviaLocal("cafezinho")
+              enviaLocal("cafezinho");
             },
             child: const Text(
               'Cafezinho',
@@ -52,7 +47,7 @@ class _OrienteMeState extends State {
           ElevatedButton(
             onPressed: () {
               print("Banheiro");
-              // enviaLocal("banheiro");
+              enviaLocal("banheiro");
             },
             child: const Text(
               'Banheiro',
@@ -64,7 +59,7 @@ class _OrienteMeState extends State {
           ElevatedButton(
             onPressed: () {
               print("Espaço Maker");
-              // enviaLocal("espaco_maker");
+              enviaLocal("Maker");
             },
             child: const Text(
               'Espaço Maker',
@@ -76,7 +71,7 @@ class _OrienteMeState extends State {
           ElevatedButton(
             onPressed: () {
               print("LIG");
-              // enviaLocal("LIG");
+              enviaLocal("LIG");
             },
             child: const Text(
               'LIG',
@@ -88,7 +83,7 @@ class _OrienteMeState extends State {
           ElevatedButton(
             onPressed: () {
               print("LE");
-              // enviaLocal("LE");
+              enviaLocal("LE");
             },
             child: const Text(
               'LE',
@@ -96,18 +91,12 @@ class _OrienteMeState extends State {
             ),
           )
         ]),
+        /*
+        // Secretaria
         Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-          ElevatedButton(
-            onPressed: () {
-              print("Secretaria");
-              //eviaLoca("secretaria")
-            },
-            child: const Text(
-              'secretaria',
-              style: TextStyle(fontSize: 15),
-            ),
-          )
+          BotaoTemplate("secretaria", enviaLocal("secretaria")),
         ]),
+        */
       ]),
     ));
   }

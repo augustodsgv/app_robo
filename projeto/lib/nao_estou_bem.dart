@@ -3,41 +3,97 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:projeto/main.dart';
 
-class Page1 extends StatelessWidget{
+//titulo da pagina -> topbar
+class CustomTextStyle {
+  static const TextStyle nameOfTextStyle = TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.w200,
+    fontFamily: "Comfortaa", 
+    // decorationThickness: 1.5
+  );
+}
+
+class NaoMeSintoBem extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround, 
-              children: [
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Page2())
-                    );
-                  }, //chamada da função
-                  child: const Text('Procurar atendimento psicológico'))
-            ]),
-            
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                ElevatedButton(onPressed: (){
-                  Navigator.push(context,
-                  MaterialPageRoute(builder:  (context) => Page3())
-                  );
-                }, 
-                child: const Text('Técnicas para me acalmar'))
-              ],  
+    return 
+      Scaffold(
+        appBar: 
+          PreferredSize(
+            preferredSize: Size.fromHeight(40),
+            child: AppBar(
+              title: Text('Não me sinto bem', style: CustomTextStyle.nameOfTextStyle,),
+              centerTitle: true,
+              backgroundColor: Colors.deepPurple,
+              shadowColor: Colors.purple,
+              actions: [
+                IconButton(
+                  icon: 
+                    const Icon(
+                      Icons.accessibility_new),
+                  onPressed: (){
+                  
+                  },
+                )
+              ],
             ),
-          ],
-        ),
-      ),
-    );
+          ),
+        body:
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround, 
+                children: [
+                ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Page2())
+                      );
+                    }, //chamada da função
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color.fromARGB(217, 217, 217, 217),
+                      fixedSize: Size(300, 50),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50)
+                      )
+                    ),
+                    child: 
+                      Text('Procurar atendimento psicológico', 
+                        style: TextStyle(color: Color.fromARGB(255, 69, 78, 207), fontFamily: "Mulish-Light")
+                      )
+
+                )
+                ]
+              ),
+              
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                 ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Page3())
+                      );
+                    }, //chamada da função
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color.fromARGB(217, 217, 217, 217),
+                      fixedSize: Size(300, 50),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50)
+                      )
+                    ),
+                    child: 
+                      Text('Técnicas para me acalmar', 
+                        style: TextStyle(color: Color.fromARGB(255, 69, 78, 207))
+                      )
+
+                )
+                ],  
+              ),
+            ],            
+          ),
+      );
   }
 }
 
@@ -46,6 +102,26 @@ class Page2 extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        appBar: 
+          PreferredSize(
+            preferredSize: Size.fromHeight(40),
+            child: AppBar(
+              title: Text('Não me sinto bem', style: CustomTextStyle.nameOfTextStyle,),
+              centerTitle: true,
+              backgroundColor: Colors.deepPurple,
+              shadowColor: Colors.purple,
+              actions: [
+                IconButton(
+                  icon: 
+                    const Icon(
+                      Icons.accessibility_new),
+                  onPressed: (){
+                  
+                  },
+                )
+              ],
+            ),
+          ),
         body: 
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -55,7 +131,14 @@ class Page2 extends StatelessWidget{
                 children: [
                   Center(
                     child: 
-                      Text('Plantão Psicanalítico do DC', style: TextStyle(fontSize: 20),)),
+                      Text(
+                        'Plantão Psicanalítico do DC', 
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ) 
+                  ),
                 ],
               ),
 
@@ -115,6 +198,26 @@ class Page3 extends StatelessWidget{
   Widget build(BuildContext context) {
       return MaterialApp(
         home: Scaffold(
+          appBar: 
+          PreferredSize(
+            preferredSize: Size.fromHeight(40),
+            child: AppBar(
+              title: Text('Não me sinto bem', style: CustomTextStyle.nameOfTextStyle,),
+              centerTitle: true,
+              backgroundColor: Colors.deepPurple,
+              shadowColor: Colors.purple,
+              actions: [
+                IconButton(
+                  icon: 
+                    const Icon(
+                      Icons.accessibility_new),
+                  onPressed: (){
+                  
+                  },
+                )
+              ],
+            ),
+          ),
           body: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -135,13 +238,22 @@ class Page3 extends StatelessWidget{
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    ElevatedButton(
+                    ElevatedButton.icon(
                       onPressed: (){
                         Navigator.push(context, 
                         MaterialPageRoute(builder: (context) => Page4())
                         );
                       }, 
-                      child: Text('Next')
+                      
+                      style: ElevatedButton.styleFrom(
+                        
+                      ),
+                      icon: Icon(
+                        Icons.next_plan
+                      ),
+                      label: Text(''),
+
+                      
                       )
                   ],
                 )
@@ -164,8 +276,48 @@ class Page4 extends StatelessWidget{
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
+                Text('Texto')
+              ],
+            ),
+
+            Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    ElevatedButton(
+                      onPressed: (){
+                        Navigator.push(context, 
+                        MaterialPageRoute(builder: (context) => Page5())
+                        );
+                      }, 
+                      child: Text('Next')
+                      )
+                  ],
+                )
+          ]
+        )
+      )
+    );
+  }
+
+}
+
+class Page5 extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
                 ElevatedButton(
-                  onPressed: (){}, 
+                  onPressed: (){
+                      Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => MyApp())
+                  );
+                  }, 
                   child: Text('Estou me sentindo melhor :)')
                 )
               ],
@@ -183,16 +335,6 @@ class Page4 extends StatelessWidget{
               )
               ],
             ),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                ElevatedButton(onPressed: (){
-                  
-                }, 
-                child: Text('next'))
-              ],
-            ),
           ],
         )
 
@@ -201,3 +343,4 @@ class Page4 extends StatelessWidget{
   }
 
 }
+
