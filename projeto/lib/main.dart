@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'orienteMe.dart';
+import 'LocalizeMe.dart';
 import 'nao_estou_bem.dart';
 
 void main() {
@@ -47,7 +47,7 @@ class _MyHomePageState extends State<MyApp> {
                     print("oriente-me");
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => OrienteMe()),
+                      MaterialPageRoute(builder: (context) => LocalizeMe()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -62,7 +62,7 @@ class _MyHomePageState extends State<MyApp> {
                     color: Color.fromARGB(255, 69, 78, 217),
                   ),
                   label: const Text(
-                    'Oriente-me',
+                    'Localize-me',
                     style:
                       TextStyle(
                         color: Color.fromARGB(255, 69, 78, 217),
