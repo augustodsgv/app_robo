@@ -7,6 +7,7 @@ Data : 2/3/2023
 
 import 'package:http/http.dart' as http;
 
+var ip = '192.168.0.200:5000';
 var listaLocais = [
   "Auditorio",
   "Banheiros",
@@ -33,15 +34,8 @@ void enviaLocal(local) async {
   if (!listaLocais.contains(local)) {
     print("nao existe este local");
   } else {
-    print('http://192.168.137.14:500/ros/goTo/' + local.toString());
-    //var resposta = await http.get(
-    //    (Uri.parse('http://192.168.137.14:500/ros/goTo/' + local.toString())));
-    /*
-    if (resposta.statusCode == 200) {
-      return true;
-    } else {
-      return false;
-    }
-  */
+    print(ip + '/ros/goTo/' + local.toString());
+    var resposta =
+        await http.get((Uri.parse('http://' + ip + '/ros/goTo/' + local)));
   }
 }

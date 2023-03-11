@@ -11,11 +11,11 @@ class LocalizeMe extends StatefulWidget {
   const LocalizeMe({Key? key}) : super(key: key);
 
   @override
-  _SelecaoLocais createState() => _SelecaoLocais();
+  _LocalizeMeState createState() => _LocalizeMeState();
 }
 
 // Classe que apresenta a seleção de telas
-class _SelecaoLocais extends State {
+class _LocalizeMeState extends State {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,8 +50,14 @@ class _SelecaoLocais extends State {
                 // Função do botão
                 onPressed: () {
                   print('Home');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => selecionaOrientacao()),
+                  );
                   enviaLocal('Home');
                 },
+
                 // Estilo do botão
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color.fromARGB(217, 217, 217, 217),
@@ -203,7 +209,8 @@ class _SelecaoLocais extends State {
                   print('LE-2');
                 },
                 // Texto
-                child: const Text('LE-2', style: TextStyle(color: Color.fromARGB(255, 69, 78, 217))),
+                child: const Text('LE-2',
+                    style: TextStyle(color: Color.fromARGB(255, 69, 78, 217))),
                 // Estilo do botão
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color.fromARGB(217, 217, 217, 217),
@@ -222,7 +229,8 @@ class _SelecaoLocais extends State {
                 },
 
                 // Texto
-                child: const Text('LE-3', style: TextStyle(color: Color.fromARGB(255, 69, 78, 217))),
+                child: const Text('LE-3',
+                    style: TextStyle(color: Color.fromARGB(255, 69, 78, 217))),
 
                 // Estilo do botão
                 style: ElevatedButton.styleFrom(
@@ -243,8 +251,7 @@ class _SelecaoLocais extends State {
                 },
                 // Texto
                 child: const Text('LE-4',
-                style: TextStyle(color: Color.fromARGB(255, 69, 78, 217))
-                ),
+                    style: TextStyle(color: Color.fromARGB(255, 69, 78, 217))),
 
                 // Estilo do botão
                 style: ElevatedButton.styleFrom(
@@ -264,10 +271,8 @@ class _SelecaoLocais extends State {
                   print('LE-5');
                 },
                 // Texto
-                child: const Text(
-                  'LE-5',
-                  style: TextStyle(color: Color.fromARGB(255, 69, 78, 217))
-                ),
+                child: const Text('LE-5',
+                    style: TextStyle(color: Color.fromARGB(255, 69, 78, 217))),
 
                 // Estilo do botão
                 style: ElevatedButton.styleFrom(
@@ -285,6 +290,47 @@ class _SelecaoLocais extends State {
   }
 }
 
+class selecionaOrientacao extends StatefulWidget {
+  const selecionaOrientacao({Key? key}) : super(key: key);
+
+  @override
+  _selecionaOrientacao createState() => _selecionaOrientacao();
+}
+
+// Estado em que se mostra o local
+class _selecionaOrientacao extends State {
+  Widget build(BuildContext context) {
+    return Scaffold(
+        // App Bar
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(40),
+          child: AppBar(
+            title: Text(
+              'Localize-me',
+              style: CustomTextStyle.nameOfTextStyle,
+            ),
+            centerTitle: true,
+            backgroundColor: Colors.deepPurple,
+            shadowColor: Colors.purple,
+            actions: [
+              IconButton(
+                icon: const Icon(Icons.accessibility_new),
+                onPressed: () {},
+              )
+            ],
+          ),
+        ),
+        body: Column(children: [
+          Row(children: [
+            Image.asset(
+              'assets/fotos_locais/maker.jpg',
+              width: 800,
+              //height: 90,
+            )
+          ])
+        ]));
+  }
+}
 /*
 // Estado de quando se clica em um botão
 class _RoboAndando extends State{
