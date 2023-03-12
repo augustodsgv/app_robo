@@ -24,8 +24,8 @@ class NaoMeSintoBem extends StatelessWidget{
             child: AppBar(
               title: Text('Não me sinto bem', style: CustomTextStyle.nameOfTextStyle,),
               centerTitle: true,
-              backgroundColor: Colors.deepPurple,
-              shadowColor: Colors.purple,
+              backgroundColor: Color.fromARGB(255, 164, 188, 196),
+              shadowColor: Colors.black,
               actions: [
                 IconButton(
                   icon: 
@@ -48,7 +48,7 @@ class NaoMeSintoBem extends StatelessWidget{
                 ElevatedButton(
                     onPressed: () {
                       Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Page2())
+                      MaterialPageRoute(builder: (context) => ProcurarAtend())
                       );
                     }, //chamada da função
                     style: ElevatedButton.styleFrom(
@@ -60,7 +60,7 @@ class NaoMeSintoBem extends StatelessWidget{
                     ),
                     child: 
                       Text('Procurar atendimento psicológico', 
-                        style: TextStyle(color: Color.fromARGB(255, 69, 78, 207), fontFamily: "Mulish-Light")
+                        style: TextStyle(color: Color.fromARGB(255, 66, 75, 79))
                       )
 
                 )
@@ -73,7 +73,7 @@ class NaoMeSintoBem extends StatelessWidget{
                  ElevatedButton(
                     onPressed: () {
                       Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Page3())
+                      MaterialPageRoute(builder: (context) => Tecnicas1())
                       );
                     }, //chamada da função
                     style: ElevatedButton.styleFrom(
@@ -85,7 +85,7 @@ class NaoMeSintoBem extends StatelessWidget{
                     ),
                     child: 
                       Text('Técnicas para me acalmar', 
-                        style: TextStyle(color: Color.fromARGB(255, 69, 78, 207))
+                        style: TextStyle(color: Color.fromARGB(255, 66, 75, 79))
                       )
 
                 )
@@ -97,19 +97,19 @@ class NaoMeSintoBem extends StatelessWidget{
   }
 }
 
-class Page2 extends StatelessWidget{
+class ProcurarAtend extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return 
+      Scaffold(
         appBar: 
           PreferredSize(
             preferredSize: Size.fromHeight(40),
             child: AppBar(
               title: Text('Não me sinto bem', style: CustomTextStyle.nameOfTextStyle,),
               centerTitle: true,
-              backgroundColor: Colors.deepPurple,
-              shadowColor: Colors.purple,
+              backgroundColor: Color.fromARGB(255, 164, 188, 196),
+              shadowColor: Colors.black,
               actions: [
                 IconButton(
                   icon: 
@@ -124,30 +124,38 @@ class Page2 extends StatelessWidget{
           ),
         body: 
           Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Center(
                     child: 
-                      Text(
-                        'Plantão Psicanalítico do DC', 
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
+                        Text(
+                          'Plantão Psicanalítico do DC', 
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Color.fromARGB(255, 66, 75, 79),
+                            fontWeight: FontWeight.bold
                         ),
-                      ) 
-                  ),
-                ],
+                      ),
+                  ) 
+                ]
               ),
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Center(
-                    child: 
-                      Text('Toda terça - feira', style: TextStyle(fontSize: 20),)),
+                  Text('Toda terça - feira', 
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                    background: Paint()
+                    ..strokeWidth = 25.0
+                    ..color = Color.fromARGB(255, 164, 188, 196)
+                    ..style = PaintingStyle.stroke
+                    ..strokeJoin = StrokeJoin.round
+                  ),)
                 ],
               ),
 
@@ -168,7 +176,7 @@ class Page2 extends StatelessWidget{
                 Center(
                   child: 
                     Text(
-                      'online - das 10h às 19h para marcar um atendimento, basta enviar um e-mail plantaopsicanalitico@ufscar.br', 
+                      'Online - das 10h às 19h para marcar um atendimento, basta enviar um e-mail plantaopsicanalitico@ufscar.br.', 
                       style: TextStyle(fontSize: 10),)),
               ],
             ),
@@ -180,132 +188,226 @@ class Page2 extends StatelessWidget{
                   child: 
                     Text(
                       'plantaopsicanalitico@ufscar.br', 
-                      style: TextStyle(fontSize: 20),)
+                      style: TextStyle(fontSize: 20,
+                      color: Colors.white,
+                      background: Paint()
+                      ..strokeWidth = 25.0
+                      ..color = Color.fromARGB(255, 164, 188, 196)
+                      ..style = PaintingStyle.stroke
+                      ..strokeJoin = StrokeJoin.round
+                      ),)
                       ),
               ],
             ),
 
             ],
           )
-      )
-    );
+      );
+  
   }
 }
 ///*
 
-class Page3 extends StatelessWidget{
+class Tecnicas1 extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-      return MaterialApp(
-        home: Scaffold(
+      return 
+         Scaffold(
           appBar: 
           PreferredSize(
             preferredSize: Size.fromHeight(40),
             child: AppBar(
               title: Text('Não me sinto bem', style: CustomTextStyle.nameOfTextStyle,),
               centerTitle: true,
-              backgroundColor: Colors.deepPurple,
-              shadowColor: Colors.purple,
+              backgroundColor: Color.fromARGB(255, 164, 188, 196),
+              shadowColor: Colors.black,
               actions: [
                 IconButton(
                   icon: 
                     const Icon(
                       Icons.accessibility_new),
-                  onPressed: (){
-                  
-                  },
+                  onPressed: (){},
                 )
               ],
             ),
           ),
-          body: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+        body:
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text('Inspire de acordo com a expansão do círculo.', 
+                  style:
+                    TextStyle(
+                      fontWeight: FontWeight.w300,
+                      fontSize: 17,
+                    ),)
+                ],
+              ),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Image.network(
+                    'https://i.pinimg.com/originals/fb/bf/33/fbbf331a7b1473d9f91e9c67ba425030.gif',
+                    width: 200,
+                    height: 200,
+                    )
+                ],
+              ),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Text('inspire de acordo com a expansão da cor verde')
+                  Text('Expire de acordo com a contração do círculo.',
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w300,
+                    ),)
                   ],
-                ),
+              ),
 
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                   children: [
-                    Text('expire de acordo com a contração da cor verde')
-                   ],
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end, 
+                children: [
+                  //trocar botão
+                  IconButton(
+                    onPressed: (){
+                      Navigator.push(context, 
+                        MaterialPageRoute(builder: (context) => Tecnicas2())
+                      );
+                    }, 
+                    icon: Icon(
+                      Icons.arrow_circle_right,
+                    ), 
+                    color: Color.fromARGB(255,131, 150, 157),
+                    iconSize: 24, 
+                     
 
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    ElevatedButton.icon(
-                      onPressed: (){
-                        Navigator.push(context, 
-                        MaterialPageRoute(builder: (context) => Page4())
-                        );
-                      }, 
-                      
-                      style: ElevatedButton.styleFrom(
-                        
-                      ),
-                      icon: Icon(
-                        Icons.next_plan
-                      ),
-                      label: Text(''),
-
-                      
-                      )
-                  ],
-                )
-              ],
-            ),
-        )  
+                  )
+                ],
+              )
+            ],
+          ), 
     );
   }  
 }
 //*/
 
-class Page4 extends StatelessWidget{
+class Tecnicas2 extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
+      appBar: 
+        PreferredSize(
+          preferredSize: Size.fromHeight(40),
+          child: AppBar(
+            title: Text('Não me sinto bem', style: CustomTextStyle.nameOfTextStyle,),
+            centerTitle: true,
+            backgroundColor: Color.fromARGB(255, 164, 188, 196),
+            shadowColor: Colors.black,
+            actions: [
+              IconButton(onPressed: (){}, 
+              icon: Icon(Icons.accessibility_new)
+              )
+            ],
+          ),
+        ),
+
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Text('Texto')
+                Text('Nomeie o que está ao seu redor', 
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 66, 75, 79),
+                    fontSize: 20,
+                  ),
+                ),
+
               ],
             ),
 
             Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    ElevatedButton(
-                      onPressed: (){
-                        Navigator.push(context, 
-                        MaterialPageRoute(builder: (context) => Page5())
-                        );
-                      }, 
-                      child: Text('Next')
-                      )
-                  ],
-                )
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text('5 Coisas que você pode ver', 
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w300,
+                  )),
+                
+              ]
+            ),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text('4 coisas que você pode tocar', 
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w300,
+                  )),
+                
+              ]
+            ),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text('2 coisas que você pode ouvir', 
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w300,
+                  )),
+                
+              ]
+            ),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text('1 coisa que você pode degustar', 
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w300,
+                  )),
+                
+              ]
+            ),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                 IconButton(
+                    onPressed: (){
+                      Navigator.push(context, 
+                        MaterialPageRoute(builder: (context) => VoltarOuRefazer())
+                      );
+                    }, 
+                    icon: Icon(
+                      Icons.arrow_circle_right,
+                    ), 
+                    color: Color.fromARGB(255,131, 150, 157),
+                    iconSize: 24, 
+                  )
+              ],
+            ),
           ]
         )
-      )
     );
   }
 
 }
 
-class Page5 extends StatelessWidget{
+class VoltarOuRefazer extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -314,11 +416,20 @@ class Page5 extends StatelessWidget{
               children: [
                 ElevatedButton(
                   onPressed: (){
-                      Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => MyApp())
+                    Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => MyApp())
                   );
-                  }, 
-                  child: Text('Estou me sentindo melhor :)')
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color.fromARGB(217, 217, 217, 217),
+                    fixedSize: Size(300, 50),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50)
+                    )
+                  ), 
+                  child: Text('Estou me sentindo melhor :)',
+                    style: TextStyle(color: Color.fromARGB(255, 66, 75, 79)),  
+                  )
                 )
               ],
             ),
@@ -328,17 +439,22 @@ class Page5 extends StatelessWidget{
               children: [
                 ElevatedButton(onPressed: (){
                   Navigator.push(context, 
-                  MaterialPageRoute(builder: (context) => Page3())
+                  MaterialPageRoute(builder: (context) => Tecnicas1())
                   );
                 }, 
-                child: Text('Quero repetir os exercícios')
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color.fromARGB(217, 217, 217, 217),
+                  fixedSize: Size(300,50),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50))
+                ),
+                child: Text('Quero repetir os exercícios',
+                  style: TextStyle(color: Color.fromARGB(255, 66, 75, 79)),
+                )
               )
               ],
             ),
           ],
         )
-
-      ),
     );
   }
 
