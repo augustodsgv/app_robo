@@ -124,22 +124,19 @@ class ProcurarAtend extends StatelessWidget{
           ),
         body: 
           Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Center(
                     child: 
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
+                        Text(
                           'Plantão Psicanalítico do DC', 
                           style: TextStyle(
                             fontSize: 20,
                             color: Color.fromARGB(255, 66, 75, 79),
                             fontWeight: FontWeight.bold
-                          ),
                         ),
                       ),
                   ) 
@@ -149,18 +146,16 @@ class ProcurarAtend extends StatelessWidget{
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Center(
-                    child: 
-                      Text('Toda terça - feira', 
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.white,
-                        background: Paint()
-                        ..strokeWidth = 25.0
-                        ..color = Color.fromARGB(255, 164, 188, 196)
-                        ..style = PaintingStyle.stroke
-                        ..strokeJoin = StrokeJoin.round
-                      ),)),
+                  Text('Toda terça - feira', 
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                    background: Paint()
+                    ..strokeWidth = 25.0
+                    ..color = Color.fromARGB(255, 164, 188, 196)
+                    ..style = PaintingStyle.stroke
+                    ..strokeJoin = StrokeJoin.round
+                  ),)
                 ],
               ),
 
@@ -181,7 +176,7 @@ class ProcurarAtend extends StatelessWidget{
                 Center(
                   child: 
                     Text(
-                      'online - das 10h às 19h para marcar um atendimento, basta enviar um e-mail plantaopsicanalitico@ufscar.br', 
+                      'Online - das 10h às 19h para marcar um atendimento, basta enviar um e-mail plantaopsicanalitico@ufscar.br.', 
                       style: TextStyle(fontSize: 10),)),
               ],
             ),
