@@ -35,8 +35,8 @@ void enviaLocal(local) async {
     print("nao existe este local");
   } else {
     print('http://192.168.137.14:500/ros/goTo/' + local.toString());
-    var resposta = await http.get(
-        (Uri.parse('http://192.168.137.14:500/ros/goTo/' + local.toString())));
+    //var resposta = await http.get(
+    //    (Uri.parse('http://192.168.137.14:500/ros/goTo/' + local.toString())));
     /*
     if (resposta.statusCode == 200) {
       return true;
