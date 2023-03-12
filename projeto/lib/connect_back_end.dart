@@ -29,13 +29,22 @@ var listaLocais = [
 ];
 
 // Função que recebe o destino do botão e passa pro back-end
-void enviaLocal(local) async {
+Future<bool> enviaLocal(local) async {
   // Verificando se o local existe
   if (!listaLocais.contains(local)) {
     print("nao existe este local");
   } else {
-    print(ip + '/ros/goTo/' + local.toString());
-    var resposta =
-        await http.get((Uri.parse('http://' + ip + '/ros/goTo/' + local)));
+    print('${ip}/ros/goTo/${local}');
+
+    var resposta = Null;
+    //await http.get((Uri.parse('http://${ip}/ros/goTo/${local}')));
   }
+  return true;
+}
+
+// Funçõa que para o robo
+Future<bool> pararRobo() async {
+  print('KKKKK se fu');
+  //var resposta = await http.get((Uri.parse('http://${ip}/ros/goTo/${local}')));
+  return false;
 }

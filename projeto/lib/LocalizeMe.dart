@@ -3,19 +3,19 @@ Descrição : Classe que implementa a tela do "oriente-me", que ajuda a pessoa a
 Autro : Augusto dos Santos
 */
 import 'package:flutter/material.dart';
-import 'templates/BotaoTemplate.dart';
+import 'package:projeto/components/walk_button.dart';
+import 'package:projeto/cores.dart';
 import 'connect_back_end.dart';
 import 'estilos.dart';
+import 'package:projeto/components/place_button.dart';
+import 'estilos.dart';
 
-class LocalizeMe extends StatefulWidget {
-  const LocalizeMe({Key? key}) : super(key: key);
-
-  @override
-  _LocalizeMeState createState() => _LocalizeMeState();
-}
+// Estados do robo
+enum EstadoRobo { esperando, carregando, andando }
 
 // Classe que apresenta a seleção de telas
-class _LocalizeMeState extends State {
+class LocalizeMe extends StatelessWidget {
+  const LocalizeMe({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +23,7 @@ class _LocalizeMeState extends State {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(40),
         child: AppBar(
-          title: Text(
+          title: const Text(
             'Localize-me',
             style: CustomTextStyle.nameOfTextStyle,
           ),
@@ -46,132 +46,74 @@ class _LocalizeMeState extends State {
           Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
             // Primeira linha
             Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-              ElevatedButton(
-                // Função do botão
-                onPressed: () {
-                  print('Home');
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => selecionaOrientacao()),
-                  );
-                  enviaLocal('Home');
-                },
+              // Home
 
-                // Estilo do botão
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(217, 217, 217, 217),
-                  fixedSize: Size(150, 50),
-                  elevation: 8,
-                  shadowColor: Color.fromARGB(255, 69, 78, 207),
-                ),
-
-                // Texto do botão
-                child: const Text(
-                  'Home',
-                  style: TextStyle(color: Color.fromARGB(255, 69, 78, 217)),
-                ),
-              )
+              PlaceButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const MostraLocal(lugar: 'Home')),
+                    );
+                  },
+                  local: 'Home')
             ]),
 
             // Copa
             Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-              ElevatedButton(
-                // Função do botão
-                onPressed: () {
-                  print("Copa");
-                  enviaLocal("Copa");
-                },
-
-                // Texto do botão
-                child: const Text(
-                  'Copa',
-                  style: TextStyle(color: Color.fromARGB(255, 69, 78, 217)),
-                ),
-
-                // Estilo do botão
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(217, 217, 217, 217),
-                  fixedSize: Size(150, 50),
-                  elevation: 8,
-                  shadowColor: Color.fromARGB(255, 69, 78, 207),
-                ),
-              )
+              PlaceButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const MostraLocal(lugar: 'Copa')),
+                    );
+                  },
+                  local: 'Copa')
             ]),
 
             // Botão banheiros
             Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-              ElevatedButton(
-                // Função do botão
-                onPressed: () {
-                  print('Banheiros');
-                  enviaLocal('Banheiros');
-                },
-
-                // Texto do botão
-                child: const Text(
-                  'Banheiros',
-                  style: TextStyle(color: Color.fromARGB(255, 69, 78, 217)),
-                ),
-
-                // Estilo do botão
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(217, 217, 217, 217),
-                  fixedSize: Size(150, 50),
-                  elevation: 8,
-                  shadowColor: Color.fromARGB(255, 69, 78, 207),
-                ),
-              )
+              PlaceButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const MostraLocal(lugar: 'Banheiros')),
+                    );
+                  },
+                  local: 'Banheiros')
             ]),
 
             // Espaço maker
             Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-              ElevatedButton(
-                // Função do botão
-                onPressed: () {
-                  print("Espaço Maker");
-                  enviaLocal("Maker");
-                },
-
-                //Texto do botão
-                child: const Text(
-                  'Espaço Maker',
-                  style: TextStyle(color: Color.fromARGB(255, 69, 78, 217)),
-                ),
-
-                // Estilo do botão
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(217, 217, 217, 217),
-                  fixedSize: Size(150, 50),
-                  elevation: 8,
-                  shadowColor: Color.fromARGB(255, 69, 78, 207),
-                ),
-              )
+              PlaceButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const MostraLocal(lugar: 'Maker')),
+                    );
+                  },
+                  local: 'Maker')
             ]),
 
             // LIG
             Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-              ElevatedButton(
-                //Função do botão
-                onPressed: () {
-                  print("LIG");
-                  enviaLocal("Lig");
-                },
-
-                // Texto
-                child: const Text(
-                  'Lig',
-                  style: TextStyle(color: Color.fromARGB(255, 69, 78, 217)),
-                ),
-
-                // Estilo do botão
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(217, 217, 217, 217),
-                  fixedSize: Size(150, 50),
-                  elevation: 8,
-                  shadowColor: Color.fromARGB(255, 69, 78, 207),
-                ),
-              )
+              PlaceButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const MostraLocal(lugar: 'Lig')),
+                    );
+                  },
+                  local: 'Lig')
             ]),
           ]),
 
@@ -179,109 +121,72 @@ class _LocalizeMeState extends State {
           Column(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
             // Botão do LE-1
             Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-              ElevatedButton(
-                // Função do botão
-                onPressed: () {
-                  print('LE-1');
-                },
-
-                // Texto
-                child: const Text(
-                  'LE-1',
-                  style: TextStyle(color: Color.fromARGB(255, 69, 78, 217)),
-                ),
-
-                // Estilo do botão
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(217, 217, 217, 217),
-                  fixedSize: Size(150, 50),
-                  elevation: 8,
-                  shadowColor: Color.fromARGB(255, 69, 78, 207),
-                ),
-              )
+              PlaceButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const MostraLocal(lugar: 'LE-1')),
+                    );
+                  },
+                  local: 'LE-1')
             ]),
 
             // Botão LE-2
             Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-              ElevatedButton(
-                // Função do botão
-                onPressed: () {
-                  print('LE-2');
-                },
-                // Texto
-                child: const Text('LE-2',
-                    style: TextStyle(color: Color.fromARGB(255, 69, 78, 217))),
-                // Estilo do botão
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(217, 217, 217, 217),
-                  fixedSize: Size(150, 50),
-                  elevation: 8,
-                  shadowColor: Color.fromARGB(255, 69, 78, 207),
-                ),
-              )
+              PlaceButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const MostraLocal(lugar: 'LE-2')),
+                    );
+                  },
+                  local: 'LE-2')
             ]),
+
             //Botão LE-3
             Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-              ElevatedButton(
-                // Função do botão
-                onPressed: () {
-                  print('LE-3');
-                },
-
-                // Texto
-                child: const Text('LE-3',
-                    style: TextStyle(color: Color.fromARGB(255, 69, 78, 217))),
-
-                // Estilo do botão
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(217, 217, 217, 217),
-                  fixedSize: Size(150, 50),
-                  elevation: 8,
-                  shadowColor: Color.fromARGB(255, 69, 78, 207),
-                ),
-              ),
+              PlaceButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const MostraLocal(lugar: 'LE-3')),
+                    );
+                  },
+                  local: 'LE-3')
             ]),
 
             // Botão LE-4
             Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-              ElevatedButton(
-                // Função do botão
-                onPressed: () {
-                  print('LE-4');
-                },
-                // Texto
-                child: const Text('LE-4',
-                    style: TextStyle(color: Color.fromARGB(255, 69, 78, 217))),
-
-                // Estilo do botão
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(217, 217, 217, 217),
-                  fixedSize: Size(150, 50),
-                  elevation: 8,
-                  shadowColor: Color.fromARGB(255, 69, 78, 207),
-                ),
-              )
+              PlaceButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const MostraLocal(lugar: 'LE-4')),
+                    );
+                  },
+                  local: 'LE-4')
             ]),
 
             // Botão LE-5
             Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-              ElevatedButton(
-                // Função do botão
-                onPressed: () {
-                  print('LE-5');
-                },
-                // Texto
-                child: const Text('LE-5',
-                    style: TextStyle(color: Color.fromARGB(255, 69, 78, 217))),
-
-                // Estilo do botão
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(217, 217, 217, 217),
-                  fixedSize: Size(150, 50),
-                  elevation: 8,
-                  shadowColor: Color.fromARGB(255, 69, 78, 207),
-                ),
-              ),
+              PlaceButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const MostraLocal(lugar: 'LE-5')),
+                    );
+                  },
+                  local: 'LE-5')
             ])
           ])
         ],
@@ -290,15 +195,20 @@ class _LocalizeMeState extends State {
   }
 }
 
-class selecionaOrientacao extends StatefulWidget {
-  const selecionaOrientacao({Key? key}) : super(key: key);
+class MostraLocal extends StatefulWidget {
+  final String lugar;
+  const MostraLocal({super.key, required this.lugar});
 
   @override
-  _selecionaOrientacao createState() => _selecionaOrientacao();
+  _MostraLocalState createState() => _MostraLocalState();
 }
 
 // Estado em que se mostra o local
-class _selecionaOrientacao extends State {
+class _MostraLocalState extends State<MostraLocal> {
+  // Inicializando o estado do robo como esperando
+  EstadoRobo selectedEstadoRobo = EstadoRobo.esperando;
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         // App Bar
@@ -306,7 +216,7 @@ class _selecionaOrientacao extends State {
           preferredSize: Size.fromHeight(40),
           child: AppBar(
             title: Text(
-              'Localize-me',
+              widget.lugar,
               style: CustomTextStyle.nameOfTextStyle,
             ),
             centerTitle: true,
@@ -321,19 +231,59 @@ class _selecionaOrientacao extends State {
           ),
         ),
         body: Column(children: [
-          Row(children: [
-            Image.asset(
-              'assets/fotos_locais/maker.jpg',
-              width: 800,
-              //height: 90,
+          // Imagem do local
+          Expanded(child : Image.asset(
+            'assets/fotos_locais/maker.jpg',
+            //'assets/fotos_locais/${widget.lugar}.jpg',
             )
-          ])
+          ),
+
+          Row(
+            children: [
+              Expanded(child : WalkButton(
+                onPressed: selectedEstadoRobo == EstadoRobo.esperando
+                    ? () {
+                        _selecionar_estado(EstadoRobo.andando);
+                      }
+                    : () {
+                        _selecionar_estado(EstadoRobo.esperando);
+                      },
+                texto: selectedEstadoRobo == EstadoRobo.esperando
+                    ? 'ir para ${widget.lugar}!'
+                    : 'Parar robo!',
+                corBotao: selectedEstadoRobo == EstadoRobo.esperando
+                    ? verdeBotao
+                    : vermelhoBotao,
+                corTexto: selectedEstadoRobo == EstadoRobo.esperando
+                    ? verdeBotaoTexto
+                    : vermelhoBotaoTexto,
+                icone: selectedEstadoRobo == EstadoRobo.esperando
+                    ? Icons.directions_walk
+                    : Icons.front_hand,
+                corIcone: selectedEstadoRobo == EstadoRobo.esperando
+                    ? verdeBotaoTexto
+                    : vermelhoBotaoTexto,
+                textoCard: '1. Ao clicar neste botão, o robô irá lhe acompanhar até o seu local\n2. Deixe a frente do robô livre para que ele não pare\n'
+              )),
+            ],
+          )
         ]));
   }
+
+  // Função que muda o estado do robo
+  _selecionar_estado(EstadoRobo estado) {
+    setState(() {
+      if (estado == EstadoRobo.esperando) {
+        selectedEstadoRobo = EstadoRobo.esperando;
+        enviaLocal(widget.lugar);
+      } else {
+        if (estado == EstadoRobo.carregando) {
+          selectedEstadoRobo = EstadoRobo.carregando;
+        } else {
+          selectedEstadoRobo = EstadoRobo.andando;
+          pararRobo();
+        }
+      }
+    });
+  }
 }
-/*
-// Estado de quando se clica em um botão
-class _RoboAndando extends State{
-  @override
-}
-*/
