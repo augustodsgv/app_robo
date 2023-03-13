@@ -1,3 +1,11 @@
+/**
+ * Programa : cores.dart
+ * Descrição : Arquivo que compila as cores usadas no app
+ * Autores : Augusto dos Santos e Gabrielly Castilho
+ * Última edição : 13/03/2023
+ */
+///
+
 import 'package:flutter/material.dart';
 
 // Cor do app

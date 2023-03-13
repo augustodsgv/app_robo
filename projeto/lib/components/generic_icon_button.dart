@@ -1,10 +1,12 @@
 /**
- * Descrição : Botão que mostras os locais a qual o robo irá
+ * Programa : generic_icon_button.dart
+ * Descrição : Botão com ícone padronizado usado no app
  * Autor : Augusto dos Santos
- * Data : 11/03/2023
+ * Última edição : 11/03/2023
 */
+///
 import 'package:flutter/material.dart';
-import 'package:projeto/cores.dart';
+import 'package:projeto/estilos/cores.dart';
 
 class GenericIconButton extends StatelessWidget {
   final String texto;

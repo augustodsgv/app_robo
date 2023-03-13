@@ -1,7 +1,14 @@
+/**
+ * Programa : home_page.dart
+ * Descrição : Página principal do app
+ * Autores : Augusto dos Santos e Gabrielly Castilho
+ * Última edição : 13/03/2023
+ */
+///
+
 import 'package:flutter/material.dart';
-import 'package:projeto/components/generic_button.dart';
 import 'package:projeto/components/generic_icon_button.dart';
-import 'package:projeto/cores.dart';
+import 'package:projeto/estilos/cores.dart';
 import 'localize_me.dart';
 import 'nao_estou_bem.dart';
 

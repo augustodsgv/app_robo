@@ -1,8 +1,11 @@
-import 'dart:io';
+/**
+ * Programa : estilos.dart
+ * Descrição : Arquivo que compila os estilos usados em todo o app
+ * Autores : Augusto dos Santos e Gabrielly Castilho
+ * Última edição : 13/03/2023
+ */
+///
 import 'package:flutter/material.dart';
-import 'package:projeto/components/generic_button.dart';
-import 'cores.dart';
-import 'package:projeto/components/generic_icon_button.dart';
 
 // Titulo da pagina -> topbar
 class CustomTextStyle {

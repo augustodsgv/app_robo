@@ -1,9 +1,10 @@
-/*
-Programa : connect_back_end.dart
-Descrição : conceta ao servidor para requisitar o movimento do robo
-Autor : Augusto dos Santos
-Data : 2/3/2023
+/**
+ * Programa : connect_back_end.dart
+ * Descrição : conceta ao servidor para requisitar o movimento do robo
+ * Autor : Augusto dos Santos
+ * Última edição : 2/3/2023
 */
+///
 
 import 'package:http/http.dart' as http;
 
@@ -34,13 +35,19 @@ Future<bool> enviaLocal(local) async {
   // Verificando se o local existe
   if (!listaLocais.contains(local)) {
     print("nao existe este local");
+    return false;
+
   } else {
     print('$ip/ros/goTo/$local');
 
-    var resposta = Null;
-    //await http.get((Uri.parse('http://${ip}/ros/goTo/${local}')));
+    var resposta =
+        await http.get((Uri.parse('http://${ip}/ros/goTo/${local}')));
+    // Testando a resposta da API
+    if (resposta == 200) {
+      return false;
+    }
+    return true;
   }
-  return true;
 }
 
 // Funçõa que para o robo

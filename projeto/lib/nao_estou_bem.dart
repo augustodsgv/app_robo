@@ -1,3 +1,11 @@
+/**
+ * Programa : nao_estou_bem.dart
+ * Descrição : Implementação da tela "não estou bem", que tem como objetivo ajudar pessoas com alguma dificuldade psicológicca
+ * Autores : Gabrielly Castilho
+ * Última edição : 13/03/2023
+ */
+///
+
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:projeto/main.dart';
@@ -30,9 +38,7 @@ class NaoMeSintoBem extends StatelessWidget{
                   icon: 
                     const Icon(
                       Icons.accessibility_new),
-                  onPressed: (){
-                  
-                  },
+                  onPressed: (){},
                 )
               ],
             ),

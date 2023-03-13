@@ -1,15 +1,16 @@
-/*
-Descrição : Classe que implementa a tela do "oriente-me", que ajuda a pessoa a se orientar no dc
-Autro : Augusto dos Santos
+/**
+ * Programa : localize_me.dart
+ * Descrição : Classe que implementa a tela do "oriente-me", que ajuda a pessoa a se orientar no dc
+ * Autor : Augusto dos Santos
+ * Última edição : 13/03/2023
 */
+///
 import 'package:flutter/material.dart';
-import 'package:projeto/components/generic_icon_button.dart';
-import 'package:projeto/components/walk_button.dart';
-import 'package:projeto/cores.dart';
 import 'connect_back_end.dart';
-import 'estilos.dart';
-import 'package:projeto/components/generic_button.dart';
-import 'estilos.dart';
+import 'estilos/cores.dart';
+import 'components/generic_button.dart';
+import 'components/walk_button.dart';
+import 'estilos/fontes.dart';
 
 // Estados do robo
 enum EstadoRobo { esperando, carregando, andando }
@@ -31,6 +32,14 @@ class LocalizeMe extends StatelessWidget {
           centerTitle: true,
           backgroundColor: corAppBar,
           shadowColor: corSombra,
+          actions: [
+                IconButton(
+                  icon: 
+                    const Icon(
+                      Icons.accessibility_new),
+                  onPressed: (){},
+                )
+              ],
         ),
       ),
 
@@ -194,6 +203,7 @@ class LocalizeMe extends StatelessWidget {
   }
 }
 
+// Pagina que mostra o local escolhido pela pessoa e mostra a opção de fazer o robô ir lá
 class MostraLocal extends StatefulWidget {
   final String lugar;
   const MostraLocal({super.key, required this.lugar});
@@ -222,21 +232,24 @@ class _MostraLocalState extends State<MostraLocal> {
             backgroundColor: corAppBar,
             shadowColor: corSombra,
             actions: [
-              IconButton(
-                icon: const Icon(Icons.home),
-                onPressed: () {},
-              )
-            ],
+                IconButton(
+                  icon: 
+                    const Icon(
+                      Icons.accessibility_new),
+                  onPressed: (){},
+                )
+              ],
           ),
         ),
-        body: Column(children: [
+
+        body:
+        Column(children: [
           // Imagem do local
           Expanded(
               child: Image.asset(
-            'assets/fotos_locais/maker.jpg',
+            'assets/fotos_locais/maker_editado.jpg',
             //'assets/fotos_locais/${widget.lugar}.jpg',
           )),
-
           Row(
             children: [
               Expanded(
@@ -264,7 +277,7 @@ class _MostraLocalState extends State<MostraLocal> {
                           ? verdeBotaoTexto
                           : vermelhoBotaoTexto,
                       textoCard:
-                          '1. Ao clicar neste botão, o robô irá lhe acompanhar até o seu local\n2. Deixe a frente do robô livre para que ele não pare\n')),
+                          '1. O robô irá lhe acompanhar até o seu destino\n2. Deixe a frente do robô livre\n3. Em caso de emergência, aperte o botão vermelho')),
             ],
           )
         ]));
