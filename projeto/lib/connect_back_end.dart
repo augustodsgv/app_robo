@@ -7,6 +7,7 @@ Data : 2/3/2023
 
 import 'package:http/http.dart' as http;
 
+var ip = '192.168.0.200:5000';
 var listaLocais = [
   "Auditorio",
   "Banheiros",
@@ -28,20 +29,22 @@ var listaLocais = [
 ];
 
 // Função que recebe o destino do botão e passa pro back-end
-void enviaLocal(local) async {
+Future<bool> enviaLocal(local) async {
   // Verificando se o local existe
   if (!listaLocais.contains(local)) {
     print("nao existe este local");
   } else {
-    print('http://192.168.137.14:500/ros/goTo/' + local.toString());
-    //var resposta = await http.get(
-    //    (Uri.parse('http://192.168.137.14:500/ros/goTo/' + local.toString())));
-    /*
-    if (resposta.statusCode == 200) {
-      return true;
-    } else {
-      return false;
-    }
-  */
+    print('${ip}/ros/goTo/${local}');
+
+    var resposta = Null;
+    //await http.get((Uri.parse('http://${ip}/ros/goTo/${local}')));
   }
+  return true;
+}
+
+// Funçõa que para o robo
+Future<bool> pararRobo() async {
+  print('KKKKK se fu');
+  //var resposta = await http.get((Uri.parse('http://${ip}/ros/goTo/${local}')));
+  return false;
 }

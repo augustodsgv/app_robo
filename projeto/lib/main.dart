@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'LocalizeMe.dart';
+import 'Localize_me.dart';
 import 'nao_estou_bem.dart';
 
 void main() {
@@ -19,30 +19,28 @@ class _MyHomePageState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body:
-          Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            // Texto do "Bem vindo ao DC"
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Text(
-                  'Bem vindo(a) ao DC!',
-                  style: TextStyle(
-                      color: Color.fromARGB(255, 66, 75, 79),
-                      fontSize: 30,
-                      fontWeight: FontWeight.w300,
-                    ), 
-                    
+          body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          // Texto do "Bem vindo ao DC"
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Text(
+                'Bem vindo(a) ao DC!',
+                style: TextStyle(
+                  color: Color.fromARGB(255, 66, 75, 79),
+                  fontSize: 30,
+                  fontWeight: FontWeight.w300,
                 ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                // Botão do Oriente-me
-                ElevatedButton.icon(
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              // Botão do Oriente-me
+              ElevatedButton.icon(
                   onPressed: () {
                     print("oriente-me");
                     Navigator.push(
@@ -61,202 +59,115 @@ class _MyHomePageState extends State<MyApp> {
                     size: 20,
                     color: Color.fromARGB(255, 66, 75, 79),
                   ),
-                  label: const Text(
-                    'Localize-me',
-                    style:
-                      TextStyle(
+                  label: const Text('Oriente-me',
+                      style: TextStyle(
                         color: Color.fromARGB(255, 66, 75, 79),
-                      )
-                  )
-                ),
+                      ))),
 
-                // Botão do Cardápio RU 
-                ElevatedButton.icon(
-                  onPressed: () {
-                    print("cardapio RU");
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromARGB(217, 217, 217, 217),
-                    fixedSize: Size(150, 50),
-                    elevation: 8,
-                    shadowColor: Colors.black,
-                  ),
-                  icon: Icon(
-                    Icons.restaurant_menu,
-                    size: 20,
-                    color: Color.fromARGB(255, 66, 75, 79),
-                  ),
-                  label: Text(
-                    'Cardápio RU',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 66, 75, 79),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Row(mainAxisAlignment: 
-              MainAxisAlignment.spaceAround, 
-              children: [
-
-              // Botão do Saldo da Carteirinha
+              // Botão do Cardápio RU
               ElevatedButton.icon(
-                onPressed: () {
-                  print('Saldo da carteirinha');
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(217, 217, 217, 217),
-                  fixedSize: Size(150,50),
-                  elevation: 8,
-                  shadowColor: Colors.black,
-                ),
-                icon: 
-                  Icon(
-                    Icons.attach_money,
-                    size: 20,
-                    color: Color.fromARGB(255, 66, 75, 79),
-                ),
-                label: Text(
-                  'Saldo da carteirinha',
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 66, 75, 79),
-                  ),
-                  //textAlign: TextAlign.center,
-                ),
-              ),
-              
-              // Botão do Reservar Sala
-              ElevatedButton.icon(
-                  onPressed: () {
-                    print('Reservar salas');
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromARGB(217, 217, 217, 217),
-                    fixedSize: Size(150, 50),
-                    elevation: 8,
-                    shadowColor: Colors.black,
-                  ),
-                  icon: Icon(
-                    Icons.insert_invitation,
-                    size: 20,
-                    color: Color.fromARGB(255, 66, 75, 79),
-                  ),
-                  label: Text(
-                    'Reservar Salas',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 66, 75, 79)
-                    ),
-                  )
-                )
-              ]
-            ),
-
-            // Botão do Não me Sinto Bem
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                ElevatedButton.icon(
-                  onPressed: () {
-                    print("não me sinto bem");
-                    Navigator.push(context, 
-                    MaterialPageRoute(builder: (context) => NaoMeSintoBem()),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromARGB(255, 164,188,196),
-                    fixedSize: Size(250, 50), 
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30), 
-                    ),
-                    elevation: 8,
-                    shadowColor: Colors.black,
-                  ),
-                  icon: Icon(
-                    Icons.sentiment_very_dissatisfied, 
-                    size: 24.0, 
-                    color: Color.fromARGB(255, 66, 75, 79),
-                  ), 
-                  label: Text(
-                    "Não me sinto bem",
-                    style: TextStyle(color: Color.fromARGB(255, 66, 75, 79), fontFamily: "Mulish-Light"),
-                  ),
-                ),
-              ],
-            ),
-          ],
-        )
-      ),
-    );
-  }
-  // Antigo
-  /*
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-          body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: const [
-              Text('Bem vindo(a) ao DC!'),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              ElevatedButton(
-                  onPressed: () {
-                    print("oriente-me");
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => OrienteMe()),
-                    );
-                  },
-                  child: const Text(
-                    'Oriente-me',
-                  )),
-              ElevatedButton(
                 onPressed: () {
                   print("cardapio RU");
                 },
-                child: const Text(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color.fromARGB(217, 217, 217, 217),
+                  fixedSize: Size(150, 50),
+                  elevation: 8,
+                  shadowColor: Colors.black,
+                ),
+                icon: Icon(
+                  Icons.restaurant_menu,
+                  size: 20,
+                  color: Color.fromARGB(255, 66, 75, 79),
+                ),
+                label: Text(
                   'Cardápio RU',
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 66, 75, 79),
+                  ),
                 ),
               ),
             ],
           ),
           Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-            ElevatedButton(
+            // Botão do Saldo da Carteirinha
+            ElevatedButton.icon(
               onPressed: () {
                 print('Saldo da carteirinha');
               },
-              child: Text(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color.fromARGB(217, 217, 217, 217),
+                fixedSize: Size(150, 50),
+                elevation: 8,
+                shadowColor: Colors.black,
+              ),
+              icon: Icon(
+                Icons.attach_money,
+                size: 20,
+                color: Color.fromARGB(255, 66, 75, 79),
+              ),
+              label: Text(
                 'Saldo da carteirinha',
+                style: TextStyle(
+                  color: Color.fromARGB(255, 66, 75, 79),
+                ),
+                //textAlign: TextAlign.center,
               ),
             ),
-            ElevatedButton(
+
+            // Botão do Reservar Sala
+            ElevatedButton.icon(
                 onPressed: () {
                   print('Reservar salas');
                 },
-                child: Text(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color.fromARGB(217, 217, 217, 217),
+                  fixedSize: Size(150, 50),
+                  elevation: 8,
+                  shadowColor: Colors.black,
+                ),
+                icon: Icon(
+                  Icons.insert_invitation,
+                  size: 20,
+                  color: Color.fromARGB(255, 66, 75, 79),
+                ),
+                label: Text(
                   'Reservar Salas',
+                  style: TextStyle(color: Color.fromARGB(255, 66, 75, 79)),
                 ))
           ]),
+
+          // Botão do Não me Sinto Bem
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              ElevatedButton(
+              ElevatedButton.icon(
                 onPressed: () {
                   print("não me sinto bem");
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Page1()),
+                    MaterialPageRoute(builder: (context) => NaoMeSintoBem()),
                   );
                 },
-                child: Text(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color.fromARGB(255, 164, 188, 196),
+                  fixedSize: Size(250, 50),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  elevation: 8,
+                  shadowColor: Colors.black,
+                ),
+                icon: Icon(
+                  Icons.sentiment_very_dissatisfied,
+                  size: 24.0,
+                  color: Color.fromARGB(255, 66, 75, 79),
+                ),
+                label: Text(
                   "Não me sinto bem",
+                  style: TextStyle(
+                      color: Color.fromARGB(255, 66, 75, 79),
+                      fontFamily: "Mulish-Light"),
                 ),
               ),
             ],
@@ -265,5 +176,4 @@ class _MyHomePageState extends State<MyApp> {
       )),
     );
   }
-  */
 }

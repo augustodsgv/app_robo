@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'cores.dart';
 
 // Titulo da pagina -> topbar
 class CustomTextStyle {
