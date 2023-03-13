@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 // Cor do app
-const corApp = Colors.deepPurple;
+const corApp = Color.fromARGB(255, 164, 188, 196);
 const corLetrasApp = Color.fromARGB(255, 66, 75, 79);
 
 // Cor dos botões
 const corBotao = Color.fromARGB(217, 217, 217, 217);
 const corTextoBotao = Color.fromARGB(255, 66, 75, 79);
-const corSombraBotao = Colors.black;
+const corSombra = Colors.black;
 
 // Cor app bar
 const corAppBar = Color.fromARGB(255, 164, 188, 196);

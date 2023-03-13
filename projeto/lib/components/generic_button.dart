@@ -6,11 +6,11 @@
 import 'package:flutter/material.dart';
 import 'package:projeto/cores.dart';
 
-
-class PlaceButton extends StatelessWidget {
-  final String local;
-  final Function () onPressed;
-  const PlaceButton({super.key, required this.onPressed, required this.local});
+class GenericButton extends StatelessWidget {
+  final String texto;
+  final Function() onPressed;
+  const GenericButton(
+      {super.key, required this.onPressed, required this.texto});
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -20,14 +20,14 @@ class PlaceButton extends StatelessWidget {
       // Estilo do botão
       style: ElevatedButton.styleFrom(
         backgroundColor: corBotao,
-        fixedSize: Size(150, 50),
-        elevation: 8,
-        shadowColor: corSombraBotao,
+        fixedSize: const Size(150, 50),
+        elevation: 4,
+        shadowColor: corSombra,
       ),
       // Texto do botão
       child: Text(
-        local,
-        style: TextStyle(color: Color.fromARGB(255, 69, 78, 217)),
+        texto,
+        style: const TextStyle(color: corTextoBotao),
       ),
     );
   }

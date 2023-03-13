@@ -416,7 +416,7 @@ class VoltarOuRefazer extends StatelessWidget{
                 ElevatedButton(
                   onPressed: (){
                     Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MyApp())
+                    MaterialPageRoute(builder: (context) => AppRobo())
                   );
                   },
                   style: ElevatedButton.styleFrom(

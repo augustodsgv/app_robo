@@ -8,6 +8,7 @@ Data : 2/3/2023
 import 'package:http/http.dart' as http;
 
 var ip = '192.168.0.200:5000';
+
 var listaLocais = [
   "Auditorio",
   "Banheiros",
@@ -34,7 +35,7 @@ Future<bool> enviaLocal(local) async {
   if (!listaLocais.contains(local)) {
     print("nao existe este local");
   } else {
-    print('${ip}/ros/goTo/${local}');
+    print('$ip/ros/goTo/$local');
 
     var resposta = Null;
     //await http.get((Uri.parse('http://${ip}/ros/goTo/${local}')));
@@ -44,7 +45,7 @@ Future<bool> enviaLocal(local) async {
 
 // Funçõa que para o robo
 Future<bool> pararRobo() async {
-  print('KKKKK se fu');
+  print('puts meu caro');
   //var resposta = await http.get((Uri.parse('http://${ip}/ros/goTo/${local}')));
   return false;
 }
