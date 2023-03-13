@@ -16,7 +16,7 @@ Para isso siga o tutorial:
 Para esse esse app foi usado _Dart_ e seu framework _Flutter_
 
 ## Desenvolvedores 👨‍💻👩‍💻
-Augusto dos Santos (eu) https://github.com/augustodsgv
+Augusto dos Santos (eu) https://github.com/augustodsgv \
 Gabrielly Castilho https://github.com/gabscastilho
 
 ## Agradecimentos 🤝
