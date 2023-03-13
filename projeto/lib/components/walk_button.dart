@@ -1,15 +1,17 @@
 /**
+ * Programa : walk_button.dart
  * Descrição : Botão que mostras os locais a qual o robo irá
  * Autor : Augusto dos Santos
- * Data : 11/03/2023
+ * Última edição : 11/03/2023
  */
+///
 
 import 'package:flutter/material.dart';
-import 'package:projeto/cores.dart';
-import 'package:projeto/estilos.dart';
+import 'package:projeto/estilos/cores.dart';
+import 'package:projeto/estilos/fontes.dart';
 
 class WalkButton extends StatefulWidget {
-  Null Function() onPressed;
+  final Null Function() onPressed;
   final String texto;
   final Color corBotao;
   final Color corTexto;
@@ -17,7 +19,7 @@ class WalkButton extends StatefulWidget {
   final Color corIcone;
   final String textoCard;
 
-  WalkButton({
+  const WalkButton({
     super.key,
     required this.onPressed,
     required this.texto,
@@ -46,9 +48,9 @@ class _WalkButtonState extends State<WalkButton> {
             // Estilo do botão
             style: ElevatedButton.styleFrom(
               backgroundColor: widget.corBotao,
-              fixedSize: Size(150, 50),
+              fixedSize: const Size(200, 50),
               elevation: 8,
-              shadowColor: Color.fromARGB(255, 69, 78, 207),
+              shadowColor: corSombra,
             ),
             // Texto do botão
             label: Text(
@@ -61,8 +63,11 @@ class _WalkButtonState extends State<WalkButton> {
               widget.icone,
               color: widget.corIcone,
             ),
-          )
-        ])
+            
+          ),
+        ]),
+        
+
       );
   }
 }
