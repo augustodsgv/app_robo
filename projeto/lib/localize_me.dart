@@ -23,23 +23,21 @@ class LocalizeMe extends StatelessWidget {
     return Scaffold(
       // App Bar
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(40),
+        preferredSize: Size.fromHeight(60),
         child: AppBar(
           title: const Text(
             'Localize-me',
-            style: TextStyle(color: corLetrasApp),
+            style: TextStyle(color: corLetrasApp, fontSize: 30, fontWeight: FontWeight.w300),
           ),
           centerTitle: true,
           backgroundColor: corAppBar,
           shadowColor: corSombra,
           actions: [
-                IconButton(
-                  icon: 
-                    const Icon(
-                      Icons.accessibility_new),
-                  onPressed: (){},
-                )
-              ],
+            IconButton(
+              icon: const Icon(Icons.accessibility_new),
+              onPressed: () {},
+            )
+          ],
         ),
       ),
 
@@ -232,18 +230,14 @@ class _MostraLocalState extends State<MostraLocal> {
             backgroundColor: corAppBar,
             shadowColor: corSombra,
             actions: [
-                IconButton(
-                  icon: 
-                    const Icon(
-                      Icons.accessibility_new),
-                  onPressed: (){},
-                )
-              ],
+              IconButton(
+                icon: const Icon(Icons.accessibility_new),
+                onPressed: () {},
+              )
+            ],
           ),
         ),
-
-        body:
-        Column(children: [
+        body: Column(children: [
           // Imagem do local
           Expanded(
               child: Image.asset(
@@ -256,10 +250,10 @@ class _MostraLocalState extends State<MostraLocal> {
                   child: WalkButton(
                       onPressed: selectedEstadoRobo == EstadoRobo.esperando
                           ? () {
-                              _selecionar_estado(EstadoRobo.andando);
+                              _selecionar_estado(EstadoRobo.esperando);
                             }
                           : () {
-                              _selecionar_estado(EstadoRobo.esperando);
+                              _selecionar_estado(EstadoRobo.andando);
                             },
                       texto: selectedEstadoRobo == EstadoRobo.esperando
                           ? 'ir para ${widget.lugar}'
@@ -286,16 +280,12 @@ class _MostraLocalState extends State<MostraLocal> {
   // Função que muda o estado do robo
   _selecionar_estado(EstadoRobo estado) {
     setState(() {
-      if (estado == EstadoRobo.esperando) {
-        selectedEstadoRobo = EstadoRobo.esperando;
+      if (estado == EstadoRobo.esperando) {     // Se você clica e o robo está esperando, significa que o robo deve andar
+        selectedEstadoRobo = EstadoRobo.andando;
         enviaLocal(widget.lugar);
-      } else {
-        if (estado == EstadoRobo.carregando) {
-          selectedEstadoRobo = EstadoRobo.carregando;
-        } else {
-          selectedEstadoRobo = EstadoRobo.andando;
-          pararRobo();
-        }
+      } else {  // estado == andando
+        selectedEstadoRobo = EstadoRobo.esperando;
+        pararRobo();
       }
     });
   }

@@ -66,6 +66,7 @@ flutter:
     - assets/fotos_locais/maker_novo.jpg
     - assets/fotos_locais/mapa.png
     - assets/fotos_locais/maker_editado.jpg
+    - foto/ansiedade.gif
 
   # To add assets to your application, add an assets section, like this:
   # assets:

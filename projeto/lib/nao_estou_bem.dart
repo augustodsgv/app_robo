@@ -255,11 +255,14 @@ class Tecnicas1 extends StatelessWidget{
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
+                  Image.asset('foto/ansiedade.gif')
+                  /*
                   Image.network(
                     'https://i.pinimg.com/originals/fb/bf/33/fbbf331a7b1473d9f91e9c67ba425030.gif',
                     width: 200,
                     height: 200,
                     )
+                    */
                 ],
               ),
 

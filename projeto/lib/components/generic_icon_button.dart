@@ -26,14 +26,15 @@ class GenericIconButton extends StatelessWidget {
         // Estilo do botão
         style: ElevatedButton.styleFrom(
           backgroundColor: corBotao,
-          fixedSize: const Size(150, 50),
+          fixedSize: const Size(300, 100),
+          //fixedSize: const Size(150, 50),
           elevation: 4,
           shadowColor: corSombra,
         ),
         // Texto do botão
         label: Text(
           texto,
-          style: const TextStyle(color: corTextoBotao),
+          style: const TextStyle(color: corTextoBotao, fontSize: 20),
         ),
         icon: Icon(
           icone,
