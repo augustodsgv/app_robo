@@ -11,6 +11,7 @@ import 'estilos/cores.dart';
 import 'components/generic_button.dart';
 import 'components/walk_button.dart';
 import 'estilos/fontes.dart';
+import 'package:projeto/components/app_bar.dart';
 
 // Estados do robo
 enum EstadoRobo { esperando, carregando, andando }
@@ -22,24 +23,10 @@ class LocalizeMe extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       // App Bar
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(60),
-        child: AppBar(
-          title: const Text(
-            'Localize-me',
-            style: TextStyle(color: corLetrasApp, fontSize: 30, fontWeight: FontWeight.w300),
+      appBar: const PreferredSize(
+            preferredSize: Size.fromHeight(60),
+            child: AppBarRobo(titulo: 'Localize-me'),
           ),
-          centerTitle: true,
-          backgroundColor: corAppBar,
-          shadowColor: corSombra,
-          actions: [
-            IconButton(
-              icon: const Icon(Icons.accessibility_new),
-              onPressed: () {},
-            )
-          ],
-        ),
-      ),
 
       // Corpo
       body: Row(
@@ -219,24 +206,11 @@ class _MostraLocalState extends State<MostraLocal> {
   Widget build(BuildContext context) {
     return Scaffold(
         // App Bar
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(40),
-          child: AppBar(
-            title: Text(
-              widget.lugar,
-              style: CustomTextStyle.nameOfTextStyle,
-            ),
-            centerTitle: true,
-            backgroundColor: corAppBar,
-            shadowColor: corSombra,
-            actions: [
-              IconButton(
-                icon: const Icon(Icons.accessibility_new),
-                onPressed: () {},
-              )
-            ],
+        appBar: const PreferredSize(
+            preferredSize: Size.fromHeight(60),
+            child: AppBarRobo(titulo: 'Localize-me'),
           ),
-        ),
+
         body: Column(children: [
           // Imagem do local
           Expanded(

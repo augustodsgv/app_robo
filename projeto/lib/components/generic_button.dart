@@ -11,8 +11,8 @@ import 'package:projeto/estilos/cores.dart';
 class GenericButton extends StatelessWidget {
   final String texto;
   final Function() onPressed;
-  const GenericButton(
-      {super.key, required this.onPressed, required this.texto});
+  const GenericButton({super.key, required this.onPressed, required this.texto});
+
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(

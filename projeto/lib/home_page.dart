@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget {
                 'Bem vindo(a) ao DC!',
                 style: TextStyle(
                   color: corLetrasApp,
-                  fontSize: 30,
+                  fontSize: 60,
                   fontWeight: FontWeight.w300,
                 ),
               ),
@@ -91,23 +91,26 @@ class HomePage extends StatelessWidget {
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color.fromARGB(255, 164, 188, 196),
-                  fixedSize: Size(250, 50),
+                  fixedSize: Size(400, 100),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
+                    borderRadius: BorderRadius.circular(60),
                   ),
                   elevation: 8,
                   shadowColor: Colors.black,
                 ),
                 icon: Icon(
                   Icons.sentiment_very_dissatisfied,
-                  size: 24.0,
+                  size: 50,
                   color: Color.fromARGB(255, 66, 75, 79),
+
                 ),
                 label: Text(
                   "Não me sinto bem",
                   style: TextStyle(
                       color: Color.fromARGB(255, 66, 75, 79),
-                      fontFamily: "Mulish-Light"),
+                      fontFamily: "Mulish-Light",
+                      fontSize: 20),
+                      
                 ),
               ),
             ],

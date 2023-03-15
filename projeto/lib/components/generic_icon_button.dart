@@ -39,6 +39,7 @@ class GenericIconButton extends StatelessWidget {
         icon: Icon(
           icone,
           color: corTextoBotao,
+          size: 50,
         ));
   }
 }

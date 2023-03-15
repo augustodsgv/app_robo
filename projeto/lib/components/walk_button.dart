@@ -40,30 +40,51 @@ class _WalkButtonState extends State<WalkButton> {
     return Card(
         color: corApp,
         child: Column(children: [
-          Text(widget.textoCard),
-          ElevatedButton.icon(
-            // Função do botão
-            onPressed: widget.onPressed,
-
-            // Estilo do botão
-            style: ElevatedButton.styleFrom(
-              backgroundColor: widget.corBotao,
-              fixedSize: const Size(200, 50),
-              elevation: 8,
-              shadowColor: corSombra,
+          Text(
+            'Instruções',
+            style: TextStyle(
+              fontSize: 50,
+              fontWeight: FontWeight.w900,
+              color: corLetrasApp
+              
+              )
             ),
-            // Texto do botão
-            label: Text(
-              widget.texto,
-              style: TextStyle(color: widget.corTexto),
+          Text(
+            widget.textoCard,
+            style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.w700,
+              )
             ),
-
-            // Icone do botão
-            icon: Icon(
-              widget.icone,
-              color: widget.corIcone,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ElevatedButton.icon(
+              // Função do botão
+              onPressed: widget.onPressed,
+          
+              // Estilo do botão
+              style: ElevatedButton.styleFrom(
+                backgroundColor: widget.corBotao,
+                fixedSize: const Size(500, 125),
+                elevation: 8,
+                shadowColor: corSombra,
+              ),
+              // Texto do botão
+              label: Text(
+                widget.texto,
+                style: TextStyle(
+                  color: widget.corTexto,
+                  fontSize: 40),
+              ),
+          
+              // Icone do botão
+              icon: Icon(
+                widget.icone,
+                color: widget.corIcone,
+                size: 50,
+              ),
+              
             ),
-            
           ),
         ]),
         
