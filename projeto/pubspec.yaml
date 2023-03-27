@@ -62,16 +62,16 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    #- assets/fotos_locais/Auditorio.jpg
+    - assets/fotos_locais/Auditorio.jpg
     - assets/fotos_locais/Copa.jpg
     - assets/fotos_locais/Banheiros.jpg
-    #- assets/fotos_locais/Home.jpg
+    - assets/fotos_locais/Home.jpg
     - assets/fotos_locais/Maker.jpg
     - assets/fotos_locais/LE-1.jpg
     - assets/fotos_locais/LE-2.jpg
     - assets/fotos_locais/LE-3.jpg
-    #- assets/fotos_locais/LE4.jpg
-    #- assets/fotos_locais/LE5.jpg
+    - assets/fotos_locais/LE-4.jpg
+    - assets/fotos_locais/LE-5.jpg
     - assets/fotos_locais/Lig.jpg
     - assets/fotos_locais/PPG-CC4.jpg
     - assets/gif_respiracao.gif
