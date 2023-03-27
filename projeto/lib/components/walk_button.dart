@@ -38,13 +38,14 @@ class _WalkButtonState extends State<WalkButton> {
   @override
   Widget build(BuildContext context) {
     return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         color: corApp,
         child: Column(children: [
           Text(
             'Instruções',
             style: TextStyle(
               fontSize: 50,
-              fontWeight: FontWeight.w900,
+              fontWeight: FontWeight.w700,
               color: corLetrasApp
               
               )
@@ -56,8 +57,10 @@ class _WalkButtonState extends State<WalkButton> {
               fontWeight: FontWeight.w700,
               )
             ),
+            
           Padding(
             padding: const EdgeInsets.all(8.0),
+            
             child: ElevatedButton.icon(
               // Função do botão
               onPressed: widget.onPressed,
@@ -65,16 +68,19 @@ class _WalkButtonState extends State<WalkButton> {
               // Estilo do botão
               style: ElevatedButton.styleFrom(
                 backgroundColor: widget.corBotao,
-                fixedSize: const Size(500, 125),
+                fixedSize: const Size(350, 100),
                 elevation: 8,
                 shadowColor: corSombra,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20)
+                )
               ),
               // Texto do botão
               label: Text(
                 widget.texto,
                 style: TextStyle(
                   color: widget.corTexto,
-                  fontSize: 40),
+                  fontSize: 30),
               ),
           
               // Icone do botão
@@ -83,6 +89,7 @@ class _WalkButtonState extends State<WalkButton> {
                 color: widget.corIcone,
                 size: 50,
               ),
+              
               
             ),
           ),

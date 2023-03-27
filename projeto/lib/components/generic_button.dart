@@ -26,6 +26,9 @@ class GenericButton extends StatelessWidget {
         //fixedSize: const Size(150, 50),
         elevation: 4,
         shadowColor: corSombra,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20)
+        )
       ),
       // Texto do botão
       child: Text(

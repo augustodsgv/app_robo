@@ -51,7 +51,7 @@ Future<bool> enviaLocal(local) async {
 
 // Funçõa que para o robo
 Future<bool> pararRobo() async {
-  print('puts meu caro');
-  //var resposta = await http.get((Uri.parse('http://${ip}/ros/goTo/${local}')));
+  print('pare!');
+  var resposta = await http.get((Uri.parse('http://${ip}/ros/cancel')));
   return false;
 }

@@ -215,8 +215,7 @@ class _MostraLocalState extends State<MostraLocal> {
           // Imagem do local
           Expanded(
               child: Image.asset(
-            'assets/fotos_locais/maker_editado.jpg',
-            //'assets/fotos_locais/${widget.lugar}.jpg',
+            'assets/fotos_locais/${widget.lugar}.jpg',
           )),
           Row(
             children: [
@@ -245,7 +244,7 @@ class _MostraLocalState extends State<MostraLocal> {
                           ? verdeBotaoTexto
                           : vermelhoBotaoTexto,
                       textoCard:
-                          '1. O robô irá lhe acompanhar até o seu destino\n2. Deixe a frente do robô livre\n3. Em caso de emergência, aperte o botão vermelho')),
+                          '1. O robô lhe acompanhará até o seu destino\n2. Deixe a frente do robô livre\n3. Em caso de emergência, aperte o botão vermelho')),
             ],
           )
         ]));
