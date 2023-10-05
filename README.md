@@ -1,4 +1,4 @@
-# App Robô 🤖
+# App Robô 🤖 
 ## Descrição 📄
 Este aplicativo foi desenvolvido para ser a interface de interação com o robô host do DC, criado para a matéria Interação Humano-Computador para ajudar os frequentadores e visitantes do Departamento de Computação com algumas atividades.
 
